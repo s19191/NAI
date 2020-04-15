@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Language {
-    String name;
-    List<String> texts;
-    Perceptron p;
+    private String name;
+    private List<String> texts;
+    private Perceptron p;
 
     public Language(String name) {
         this.name = name;
@@ -12,9 +12,21 @@ public class Language {
         p = new Perceptron();
     }
 
-    public void addText(String newText) {
+    void addText(String newText, String languageName) {
         texts.add(newText);
-        p.learn(newText);
+        if (languageName.equals(name)) {
+            p.learn(newText, 1);
+        } else {
+            p.learn(newText, 0);
+        }
+    }
+
+    boolean test(String testText){
+        return p.test(testText);
+    }
+
+    String getName() {
+        return name;
     }
 
     @Override

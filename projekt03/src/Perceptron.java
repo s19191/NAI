@@ -3,23 +3,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Perceptron {
-    double alpha;
-    double threshold;
-    double[] weight;
-    List<int[]> training;
+    private double alpha;
+    private double threshold;
+    private double[] weight;
+    private List<int[]> training;
+    private List<Integer> checker;
 
     public Perceptron() {
         alpha = 0.1;
-        threshold = Math.random()*10-5;
+        threshold = Math.random()*2-1;
+//        threshold = -1.0;
         weight = new double[26];
         for (int i = 0; i < 26; i++) {
-            weight[i] = Math.random()*10-5;
+            weight[i] = Math.random()*2-1;
         }
         training = new ArrayList<>();
+        checker = new ArrayList<>();
     }
 
-    public void learn(String text){
-        addTrining(text);
+    void learn(String text, int newChecker){
+        int[] letters = lettersQuantity(text);
+        training.add(letters);
+        checker.add(newChecker);
         int allGood = 0;
         while (allGood != training.size()){
             for (int i = 0; i < training.size(); i++) {
@@ -36,7 +41,7 @@ public class Perceptron {
                     y = 0.0;
                     oppositeY = 1.0;
                 }
-                if (y == 1.0) {
+                if (y == 1.0 && checker.get(i) == 1 || y == 0.0 && checker.get(i) == 0) {
                     allGood++;
                 } else {
                     threshold = threshold + alpha*(oppositeY - y)*1;
@@ -50,7 +55,8 @@ public class Perceptron {
             }
         }
     }
-    public void addTrining(String text) {
+    
+    int[] lettersQuantity(String text) {
         int[] letters = new int[26];
         text = text.toUpperCase();
         for (int i = 0; i < text.length(); i++) {
@@ -58,7 +64,20 @@ public class Perceptron {
                 letters[text.charAt(i) -65]++;
             }
         }
-        training.add(letters);
+        return letters;
+    }
+    
+    boolean test(String testText){
+        int[] letters = lettersQuantity(testText);
+        double sum = 1 * threshold;
+        for (int i = 0; i < weight.length; i++) {
+            sum += letters[i] * weight[i];
+        }
+        if (sum>=0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override

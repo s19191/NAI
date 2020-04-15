@@ -19,25 +19,32 @@ public class Futil {
             Stream<Path> streamPath= Files.walk(new File(dirName).toPath());
             for (Path p: streamPath.filter(Files::isDirectory).collect(Collectors.toList())) {
                 if (!p.toString().equals("training")) {
-                    Language tmp = new Language(p.getFileName().toString());
+                    languages.add(new Language(p.getFileName().toString()));
+                }
+            }
+            Stream<Path> streamPath1= Files.walk(new File(dirName).toPath());
+            for (Path p: streamPath1.filter(Files::isDirectory).collect(Collectors.toList())) {
+                if (!p.toString().equals("training")) {
+                    String languageName = p.getFileName().toString();
                     try {
                         Files.walkFileTree(p, new SimpleFileVisitor<Path>() {
                             @Override
                             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                                 try {
                                     List<String> lines = readAllLines(file, Charset.forName("UTF-8"));
-                                    String text = "";
+                                    StringBuilder sb = new StringBuilder();
                                     for (String s : lines) {
-                                        text += s;
+                                        sb.append(s);
                                     }
-                                    tmp.addText(text);
+                                    for (Language l : languages) {
+                                        l.addText(sb.toString(), languageName);
+                                    }
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
                                 return FileVisitResult.CONTINUE;
                             }
                         });
-                        languages.add(tmp);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
