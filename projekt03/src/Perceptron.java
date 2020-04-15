@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Perceptron {
@@ -58,5 +59,14 @@ public class Perceptron {
             }
         }
         training.add(letters);
+    }
+
+    @Override
+    public String toString() {
+        return "Perceptron{" +
+                "alpha=" + alpha +
+                ", threshold=" + threshold +
+                ", weight=" + Arrays.toString(weight) +
+                '}';
     }
 }

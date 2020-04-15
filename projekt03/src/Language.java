@@ -21,7 +21,6 @@ public class Language {
     public String toString() {
         return "Language{" +
                 "name='" + name + '\'' +
-                ", texts=" + texts +
                 ", p=" + p +
                 '}';
     }
