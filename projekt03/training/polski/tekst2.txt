@@ -1,0 +1,17 @@
+Chromosom – forma organizacji materiału genetycznego wewnątrz komórki[1]. Nazwa pochodzi z języka greckiego, gdzie χρῶμα (chroma, kolor) i σῶμα (soma, ciało). Chromosomy rozróżniano poprzez wybarwienie. Pierwszy raz terminu tego użył Heinrich Wilhelm Waldeyer w roku 1888[2].
+Chromosomy występują w formie mikroskopijnej struktury najlepiej widocznej w metafazie podziału komórkowego, kiedy to są najbardziej skondensowane. Chromosomy są zbudowane z dwóch chromatyd siostrzanych (podłużnych jego części) połączonych w jednym punkcie centromerem (wyjątkiem są chromosomy powstałe po pęknięciu centromeru w trakcie podziału jądra komórkowego – pod koniec metafazy). U organizmów prokariotycznych chromosom stanowi pojedyncza, kolista cząsteczka DNA[3], natomiast u organizmów eukariotycznych liniowa cząsteczka DNA[4]. Każda cząsteczka DNA buduje jedną chromatydę. Zarówno u prokariontów, jak i eukariontów chromosomy zbudowane są z kompleksu DNA i białek histonowych lub histonopodobnych (u prokariontów). W komórkach organizmów prokariotycznych i niektórych eukariotycznych (drożdże, pierwotniaki) występują również nieosłonięte, koliste cząsteczki DNA, zwane plazmidami.
+
+U organizmów eukariotycznych chromosomy z obu stron zakończone są powtarzającą się sekwencją nukleotydów tworzących telomer. Skracanie telomerów podczas podziałów komórki być może prowadzi do starzenia się komórki.
+
+Locus (l. mnoga loci; czyt. lokus, loci) to miejsce w chromosomie, gdzie zlokalizowany jest gen.
+
+Struktura chromosomu nie jest niezmienna, podlega on bowiem zmianom zwanym mutacjami. Mutacje dotyczące bezpośrednio chromosomów to aberracje chromosomowe lub mutacje genomowe.
+
+Chromosomy dzielą się na autosomy – zawiadujące dziedziczeniem cech nie sprzężonych z płcią, oraz chromosomy płciowe – czyli allosomy lub heterosomy, których obecność przejawia się u konkretnej płci i w wielu przypadkach determinuje ją.
+
+Ze względu na położenie centromeru wyróżnia się chromosomy:
+
+metacentryczne
+submetacentryczne
+akrocentryczne
+telocentryczne
