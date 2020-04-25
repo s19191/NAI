@@ -1,0 +1,33 @@
+Chromosomy występują w formie mikroskopijnej struktury najlepiej widocznej w metafazie podziału komórkowego, kiedy to są najbardziej skondensowane. Chromosomy są zbudowane z dwóch chromatyd siostrzanych (podłużnych jego części) połączonych w jednym punkcie centromerem (wyjątkiem są chromosomy powstałe po pęknięciu centromeru w trakcie podziału jądra komórkowego – pod koniec metafazy). U organizmów prokariotycznych chromosom stanowi pojedyncza, kolista cząsteczka DNA[3], natomiast u organizmów eukariotycznych liniowa cząsteczka DNA[4]. Każda cząsteczka DNA buduje jedną chromatydę. Zarówno u prokariontów, jak i eukariontów chromosomy zbudowane są z kompleksu DNA i białek histonowych lub histonopodobnych (u prokariontów). W komórkach organizmów prokariotycznych i niektórych eukariotycznych (drożdże, pierwotniaki) występują również nieosłonięte, koliste cząsteczki DNA, zwane plazmidami.
+
+U organizmów eukariotycznych chromosomy z obu stron zakończone są powtarzającą się sekwencją nukleotydów tworzących telomer. Skracanie telomerów podczas podziałów komórki być może prowadzi do starzenia się komórki.
+
+Locus (l. mnoga loci; czyt. lokus, loci) to miejsce w chromosomie, gdzie zlokalizowany jest gen.
+
+Struktura chromosomu nie jest niezmienna, podlega on bowiem zmianom zwanym mutacjami. Mutacje dotyczące bezpośrednio chromosomów to aberracje chromosomowe lub mutacje genomowe.
+
+Chromosomy dzielą się na autosomy – zawiadujące dziedziczeniem cech nie sprzężonych z płcią, oraz chromosomy płciowe – czyli allosomy lub heterosomy, których obecność przejawia się u konkretnej płci i w wielu przypadkach determinuje ją.
+
+Ze względu na położenie centromeru wyróżnia się chromosomy:
+
+metacentryczne
+submetacentryczne
+akrocentryczne
+telocentryczne
+
+W celu dokładnego określenia każdej pary chromosomowej w grupie badanej, należy na początku oczyścić preparat z zanieczyszczeń białkowych za pomocą trypsyny. Następnie stosuje się tzw. odczynnik Giemsy, który zabarwia chromosomy tworząc charakterystyczne dla każdego z nich sekwencje prążków. Metoda ta została zatwierdzona na Konferencji Paryskiej w 1972 roku[5].
+
+Liczba chromosomów u różnych gatunków może być różna – od pojedynczych par (u samców Myrmecia pilosula występuje jeden chromosom, samica tego gatunku ma dwa chromosomy[6]) aż do kilkuset par, ale zazwyczaj wynosi kilka do kilkudziesięciu par (4 pary u muszki owocowej[6], 20 par u myszy[potrzebny przypis], 23 pary u człowieka[6], 24 pary u szympansa[6], 39 u psa[6]), najwięcej chromosomów (wśród roślin) – 1260 stwierdzono u nasięźrzału Ophioglossum reticulatum[7][6]). Aulacantha scolymantha ma około 2000 chromosomów[6]. W procesie ewolucji liczba chromosomów może ulec zmianie na skutek mutacji, tak jak w przypadku chromosomu 2 u człowieka, o którym uważa się, że powstał poprzez połączenie dwóch chromosomów małp człekokształtnych[8].
+
+Komórki mogą być:
+
+haploidalne – zawierać pojedynczą kopię każdego z autosomów oraz kopie allosomów (chromosomów płciowych) własnej płci.
+diploidalne – zawierać podwójną kopię każdego z autosomów oraz kopie allosomów własnej płci.
+poliploidalne – jeśli garnitur chromosomowy jest zwielokrotniony ponad dwukrotnie.
+U gatunków rozmnażających się bezpłciowo każda komórka organizmu ma tę samą liczbę chromosomów.
+
+Komórki niehaploidalne posiadają chromosomy homologiczne, które zawierają te same geny, jednak mogą zawierać różne allele. U gatunków rozmnażających się płciowo występują komórki zarówno haplo- jak i diploidalne. W przypadku wielu organizmów, w tym zdecydowanej większości kręgowców, liczba chromosomów w komórkach somatycznych jest dwa razy większa (diploidalna) niż w gametach (haploidalna). Do powstania haploidalnych gamet dochodzi w wyniku mejozy. Podział komórek somatycznych (diploidach) zachodzi na drodze mitozy, w której najpierw dochodzi do podwojenia materiału genetycznego.
+
+W przypadku innych organizmów, takich jak np. rośliny lądowe, występuje przemiana pokoleń – pokolenie haploidalne występuje po pokoleniu diploidalnym. Są one przeważnie bardzo od siebie odmienne.
+
+Innym przypadkiem są błonkówki, u których samice są diploidalne, a samce haploidalne.

@@ -1,0 +1,58 @@
+Das englische Substantiv computer ist abgeleitet von dem englischen Verb to compute. Jenes ist abgeleitet von dem lateinischen Verb computare, was zusammenrechnen bedeutet.
+
+Der englische Begriff computer war ursprünglich eine Berufsbezeichnung für Hilfskräfte, die immer wiederkehrende Berechnungen (z. B. für die Astronomie, für die Geodäsie oder für die Ballistik) im Auftrag von Mathematikern ausführten und damit Tabellen wie z. B. eine Logarithmentafel füllten.
+
+In der frühen Kirchengeschichte erfolgte eine Ablösung des jüdischen Kalenders durch den Julianischen Kalender. Die hieraus resultierenden Berechnungsschwierigkeiten des Osterdatums dauerten bis zum Mittelalter an und waren Gegenstand zahlreicher Publikationen, häufig betitelt mit Computus Ecclesiasticus. Doch finden sich noch weitere Titel, z. B. von Sigismund Suevus 1574, die sich mit arithmetischen Fragestellungen auseinandersetzen. Der früheste Text, in dem das Wort Computer isoliert verwendet wird, stammt von 1613.[3]
+
+In der Zeitung The New York Times tauchte das Wort erstmals am 2. Mai 1892 in einer Kleinanzeige der United States Navy mit dem Titel A Computer Wanted ‚Ein Rechner gesucht‘ auf, in der Kenntnisse in Algebra, Geometrie, Trigonometrie und Astronomie vorausgesetzt worden sind.[4]
+
+An der University of Pennsylvania in Philadelphia wurden im Auftrag der United States Army ballistische Tabellen berechnet. Das Ergebnis waren Bücher für die Artillerie, die für unterschiedliche Geschütze Flugbahnen unterschiedlicher Geschosse vorhersagten. Diese Berechnungen erfolgten größtenteils von Hand. Die einzige Hilfe war eine Tabelliermaschine, die zu multiplizieren und zu dividieren vermochte. Die Angestellten, die dort rechneten, wurden als „computer“ bezeichnet.[5]
+
+Grundsätzlich unterscheiden sich zwei Bauweisen: Ein Rechner ist ein Digitalrechner, wenn er mit digitalen Geräteeinheiten digitale Daten verarbeitet (also Zahlen und Textzeichen); er ist ein Analogrechner, wenn er mit analogen Geräteeinheiten analoge Daten verarbeitet (also kontinuierlich verlaufende elektrische Messgrößen wie Spannung oder Strom).
+
+Heute werden fast ausschließlich Digitalrechner eingesetzt. Diese folgen gemeinsamen Grundprinzipien, mit denen ihre freie Programmierung ermöglicht wird. Bei einem Digitalrechner werden dabei zwei grundsätzliche Bestandteile unterschieden: Die Hardware, die aus den elektronischen, physisch anfassbaren Teilen des Computers gebildet wird, sowie die Software, die die Programmierung des Computers beschreibt.
+
+Ein Digitalrechner besteht zunächst nur aus Hardware. Die Hardware stellt erstens einen Speicher bereit, in dem Daten portionsweise wie auf den nummerierten Seiten eines Buches gespeichert und jederzeit zur Verarbeitung oder Ausgabe abgerufen werden können. Zweitens verfügt das Rechenwerk der Hardware über grundlegende Bausteine für eine freie Programmierung, mit denen jede beliebige Verarbeitungslogik für Daten dargestellt werden kann: Diese Bausteine sind im Prinzip die Berechnung, der Vergleich und der bedingte Sprung. Ein Digitalrechner kann beispielsweise zwei Zahlen addieren, das Ergebnis mit einer dritten Zahl vergleichen und dann abhängig vom Ergebnis entweder an der einen oder der anderen Stelle des Programms fortfahren. In der Informatik wird dieses Modell theoretisch durch die eingangs erwähnte Turing-Maschine abgebildet; die Turing-Maschine stellt die grundsätzlichen Überlegungen zur Berechenbarkeit dar.
+
+Erst durch eine Software wird der Digitalcomputer jedoch nützlich. Jede Software ist im Prinzip eine definierte, funktionale Anordnung der oben geschilderten Bausteine Berechnung, Vergleich und bedingter Sprung, wobei die Bausteine beliebig oft verwendet werden können. Diese Anordnung der Bausteine, die als Programm bezeichnet wird, wird in Form von Daten im Speicher des Computers abgelegt. Von dort kann sie von der Hardware ausgelesen und abgearbeitet werden. Dieses Funktionsprinzip der Digitalcomputer hat sich seit seinen Ursprüngen in der Mitte des 20. Jahrhunderts nicht wesentlich verändert, wenngleich die Details der Technologie erheblich verbessert wurden.
+
+Analogrechner funktionieren nach einem anderen Prinzip. Bei ihnen ersetzen analoge Bauelemente (Verstärker, Kondensatoren) die Logikprogrammierung. Analogrechner wurden früher häufiger zur Simulation von Regelvorgängen eingesetzt (siehe: Regelungstechnik), sind heute aber fast vollständig von Digitalcomputern abgelöst worden. In einer Übergangszeit gab es auch Hybridrechner, die einen Analog- mit einem digitalen Computer kombinierten.
+
+Mögliche Einsatzmöglichkeiten für Computer sind:
+
+Mediengestaltung (Bild- und Textverarbeitung)
+Verwaltungs- und Archivierungsanwendungen
+Steuerung von Maschinen und Abläufen (Drucker, Produktion in der Industrie durch z. B. Roboter, eingebettete Systeme)
+Berechnungen und Simulationen (z. B. BOINC)
+Medienwiedergabe (Internet, Fernsehen, Videos, Unterhaltungsanwendungen wie Computerspiele, Lernsoftware)
+Kommunikation (Chat, E-Mail, soziale Netzwerke)
+Softwareentwicklung
+Hardwarearchitektur
+Das heute allgemein angewandte Prinzip, das nach seiner Beschreibung durch John von Neumann von 1946 als Von-Neumann-Architektur bezeichnet wird, definiert für einen Computer fünf Hauptkomponenten:
+
+das Rechenwerk (im Wesentlichen die arithmetisch-logische Einheit (ALU)),
+das Steuerwerk,
+die Buseinheit,
+das Speicherwerk sowie
+die Eingabe-/Ausgabewerk(e).
+In den heutigen Computern sind die ALU und die Steuereinheit meistens zu einem Baustein verschmolzen, der so genannten CPU (Central Processing Unit, zentraler Prozessor).
+
+Der Speicher ist eine Anzahl von durchnummerierten, adressierbaren „Zellen“; jede von ihnen kann ein einzelnes Stück Information aufnehmen. Diese Information wird als Binärzahl, also eine Abfolge von ja/nein-Informationen im Sinne von Einsen und Nullen, in der Speicherzelle abgelegt.
+
+Bezüglich des Speicherwerks ist eine wesentliche Designentscheidung der Von-Neumann-Architektur, dass sich Programm und Daten einen Speicherbereich teilen (dabei belegen die Daten in aller Regel den unteren und die Programme den oberen Speicherbereich). Demgegenüber stehen in der Harvard-Architektur Daten und Programmen eigene (physikalisch getrennte) Speicherbereiche zur Verfügung. Der Zugriff auf die Speicherbereiche kann parallel realisiert werden, was zu Geschwindigkeitsvorteilen führt. Aus diesem Grund werden digitale Signalprozessoren häufig in Harvard-Architektur ausgeführt. Weiterhin können Daten-Schreiboperationen in der Harvard-Architektur keine Programme überschreiben (Informationssicherheit).
+
+In der Von-Neumann-Architektur ist das Steuerwerk für die Speicherverwaltung in Form von Lese- und Schreibzugriffen zuständig.
+
+Die ALU hat die Aufgabe, Werte aus Speicherzellen zu kombinieren. Sie bekommt die Werte von der Steuereinheit geliefert, verrechnet sie (addiert beispielsweise zwei Zahlen) und gibt den Wert an die Steuereinheit zurück, die den Wert dann für einen Vergleich verwenden oder in eine andere Speicherzelle schreiben kann.
+
+Die Ein-/Ausgabeeinheiten schließlich sind dafür zuständig, die initialen Programme in die Speicherzellen einzugeben und dem Benutzer die Ergebnisse der Berechnung anzuzeigen.
+
+Softwarearchitektur
+Die Von-Neumann-Architektur ist gewissermaßen die unterste Ebene des Funktionsprinzips eines Computers oberhalb der elektrophysikalischen Vorgänge in den Leiterbahnen. Die ersten Computer wurden auch tatsächlich so programmiert, dass man die Nummern von Befehlen und von bestimmten Speicherzellen so, wie es das Programm erforderte, nacheinander in die einzelnen Speicherzellen schrieb. Um diesen Aufwand zu reduzieren, wurden Programmiersprachen entwickelt. Diese generieren die Zahlen innerhalb der Speicherzellen, die der Computer letztlich als Programm abarbeitet, aus Textbefehlen heraus automatisch, die auch für den Programmierer einen semantisch verständlichen Inhalt darstellen (z. B. GOTO für den „unbedingten Sprung“).
+
+Später wurden bestimmte sich wiederholende Prozeduren in so genannten Bibliotheken zusammengefasst, um nicht jedes Mal das Rad neu erfinden zu müssen, z. B.: das Interpretieren einer gedrückten Tastaturtaste als Buchstabe „A“ und damit als Zahl „65“ (im ASCII-Code). Die Bibliotheken wurden in übergeordneten Bibliotheken gebündelt, welche Unterfunktionen zu komplexen Operationen verknüpfen (Beispiel: die Anzeige eines Buchstabens „A“, bestehend aus 20 einzelnen schwarzen und 50 einzelnen weißen Punkten auf dem Bildschirm, nachdem der Benutzer die Taste „A“ gedrückt hat).
+
+In einem modernen Computer arbeiten sehr viele dieser Programmebenen über- bzw. untereinander. Komplexere Aufgaben werden in Unteraufgaben zerlegt, die von anderen Programmierern bereits bearbeitet wurden, die wiederum auf die Vorarbeit weiterer Programmierer aufbauen, deren Bibliotheken sie verwenden. Auf der untersten Ebene findet sich aber immer der so genannte Maschinencode – jene Abfolge von Zahlen, mit der der Computer auch tatsächlich gesteuert wird.
+
+Computersystem
+Als Computersystem bezeichnet man (a) einerseits ein Netzwerk oder einen Verbund aus mehreren Computern, die individuell gesteuert werden und auf gemeinsam genutzte Daten und Geräte zugreifen können, (b) die einen einzelnen voll funktionstüchtigen Rechner in ihrem Zusammenspiel bedingende Gesamtheit von externen und internen Komponenten, d. h. Hardware, Software wie auch angeschlossenen Peripheriegeräten sowie (c) ein System von Programmen zur Steuerung und Überwachung von Computern.[6]

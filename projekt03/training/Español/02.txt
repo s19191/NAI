@@ -1,0 +1,20 @@
+En biología y citogenética, se denomina cromosoma (del griego χρώμα, -τος chroma, color y σώμα, -τος soma, cuerpo o elemento) a cada una de las estructuras altamente organizadas, formadas por ADN y proteínas, que contiene la mayor parte de la información genética de un ser vivo.
+
+En las divisiones celulares (mitosis o meiosis) el cromosoma presenta su forma más conocida, cuerpos bien delineados en forma de X, debido a su alto grado de compactación y duplicación.
+
+En la interfase no pueden ser visualizados mediante el microscopio óptico de manera nítida ya que ocupan territorios cromosómicos discretos. En las células eucariotas y en las arqueas (a diferencia que en las bacterias), el ADN siempre se encontrará en forma de cromatina, es decir, asociado fuertemente a unas proteínas denominadas histonas y no-histonas. La cromatina, organizada en cromosomas, se encuentra en el núcleo de las células eucariotas y se visualiza como una maraña de hebras delgadas. Cuando comienza el proceso de duplicación y división del material genético llamado (cariocinesis), esa maraña de hebras inicia un fenómeno de condensación progresivo que permite visualizar cada uno de los cromosomas.
+Cuando se examinan con detalle durante la mitosis, se observa que cada uno de los cromosomas presenta una forma y un tamaño característicos.
+
+Cada cromosoma tiene una región condensada, o constreñida, llamada centrómero, que confiere la apariencia particular a cada cromosoma y que permite clasificarlos según la posición del centrómero a lo largo del cromosoma.
+
+Otra observación que se puede realizar es que el número de cromosomas de los individuos de la misma especie es constante. Esta cantidad de cromosomas se denomina número o Ploidía y se simboliza como 2n o 4n o 1n dependiendo del tipo de célula.
+
+Cuando se examina la longitud de tales cromosomas y la situación del centrómero surge el segundo rasgo general: para cada cromosoma con una longitud y una posición del centrómero determinada existe en el núcleo otro cromosoma con características idénticas, o sea, en las células diploides 2n los cromosomas se encuentran formando pares. Los miembros de cada par se denominan cromosomas homólogos.
+
+
+Mapa citogenético o cariograma de una niña antes de nacer, resultado de una amniocentesis.
+En la figura de la derecha se presentan todos los cromosomas de interfase de una niña (obsérvese los dos cromosomas X abajo derecha), ordenados por parejas de homólogos y por su longitud, lo que se denomina cariotipo. Puede observarse que en este cariotipo hay 46 cromosomas (o sea, 2n=46) que es el número cromosómico de la especie humana. Se puede advertir, también, que cada cromosoma tiene una estructura doble, con dos cromátidas hermanas que yacen paralelas entre sí y unidas por un único centrómero. Durante la mitosis las cromátidas hermanas, que son idénticas, se separan una de otra hacia dos nuevas células.
+
+Las parejas de cromosomas homólogos que se observan en la imagen tienen, además, una semejanza genética fundamental: presentan los mismos genes situados en los mismos lugares a lo largo del cromosoma (tales lugares se denominan locus o loci en plural). Esto indica que cada miembro del par de homólogos lleva información genética para las mismas características del organismo. En organismos con reproducción sexual, uno de los miembros del par de cromosomas homólogos proviene de la madre (a través del óvulo) y el otro del padre (a través del espermatozoide). Por ello, y como consecuencia de la herencia biparental, cada organismo diploide tiene dos copias de cada uno de los genes, cada una ubicada en uno de los cromosomas homólogos.
+
+Una excepción importante al concepto de parejas de cromosomas homólogos es que en muchas especies los miembros de la pareja de los cromosomas sexuales, no tienen el mismo tamaño, ni igual situación del centrómero, ni la misma proporción entre los brazos o, incluso, no tienen los mismos loci. Por ejemplo, el cromosoma Y (que determina el sexo masculino en humanos) es de menor tamaño y carece de la mayoría de los loci que se encuentran en el cromosoma X.1​
