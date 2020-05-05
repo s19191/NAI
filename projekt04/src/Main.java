@@ -15,50 +15,101 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        List<Soldier> army = new ArrayList<>();
+        List<Żołnierz> armia = new ArrayList<>();
         int numberOfAttributes = lines.get(0).trim().split("\\s+").length -1;
         for (int i = 0; i < lines.size(); i++) {
             if (lines.get(i).trim().split("\\s+").length == numberOfAttributes + 1) {
-                army.add(new Soldier(lines.get(i).trim().split("\\s+"), numberOfAttributes));
+                armia.add(new Żołnierz(lines.get(i).trim().split("\\s+"), numberOfAttributes));
             }
         }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj parametr k");
         int k = getterFromScanner(scanner,"k");
-        List<General> generals = promote(army, k);
-        while (army.get(0).ifChanged) {
-            for (int i = 0; i < generals.size(); i++) {
-                for (int j = 0; j < army.size(); j++) {
-                    army.get(j).distance(generals.get(i));
-                }
-            }
+        List<Generał> generałowie = awansuj(armia, k);
+        List<Pluton> plutony = stwórzPlutony(armia, generałowie, k);
+        for (int i = 0; i < plutony.size(); i++) {
+            System.out.println(plutony.get(i));
+        }
+        for (int i = 0; i < plutony.size(); i++) {
+            plutony.get(i).countEntrophy();
         }
     }
-    public static List<General> promote(List<Soldier> army, int k) {
-        List<General> generals = new ArrayList<>();
-        int[] which = new int[k];
+
+    public static List<Pluton> stwórzPlutony(List<Żołnierz> armia, List<Generał> generałowie, int k) {
+        List<Pluton> plutony;
+        do {
+            armia.get(0).czyByłaZmiana = false;
+            for (int i = 0; i < armia.size(); i++) {
+                double[] odległości = new double[generałowie.size()];
+                for (int j = 0; j < generałowie.size(); j++) {
+                    odległości[j] = armia.get(i).obliczOdległość(generałowie.get(j));
+                }
+                double min = odległości[0];
+                int który = 0;
+                for (int j = 1; j < odległości.length; j++) {
+                    if (odległości[j] < min) {
+                        min = odległości[j];
+                        który = j;
+                    }
+                }
+                armia.get(i).wybierzGenerała(generałowie.get(który));
+            }
+            plutony = new ArrayList<>();
+            for (int i = 0; i < generałowie.size(); i++) {
+                plutony.add(new Pluton(generałowie.get(i), k));
+            }
+            for (int i = 0; i < armia.size(); i++) {
+                for (int j = 0; j < plutony.size(); j++) {
+                    if (plutony.get(j).generał.equals(armia.get(i).obecnyGenerał)) {
+                        plutony.get(j).addSoldier(armia.get(i));
+                    }
+                }
+            }
+            System.out.println("*************************następna iteracja*************************");
+            for (int i = 0; i < plutony.size(); i++) {
+                plutony.get(i).changeGeneral();
+            }
+            for (int i = 1; i < plutony.size() +1; i++) {
+                double sum = 0.0;
+                for (int j = 0; j < plutony.get(i - 1).żołnierze.size(); j++) {
+                    for (int l = 0; l < plutony.get(i - 1).generał.values.length; l++) {
+                        sum += Math.pow(plutony.get(i - 1).generał.values[l] - plutony.get(i - 1).żołnierze.get(j).wartości[l], 2);
+                    }
+                }
+                System.out.println("Pluton: " + i + ", liczność plutonu = " + plutony.get(i - 1).żołnierze.size());
+                System.out.println("Pluton: " + i + ", suma kwadratów odległości żołnierzy (puntków) do  generała (środka grupy): " + sum);
+            }
+        }
+        while (armia.get(0).czyByłaZmiana);
+        System.out.println("*************************koniec pętli*************************");
+        return plutony;
+    }
+
+    public static List<Generał> awansuj(List<Żołnierz> army, int k) {
+        List<Generał> generałowie = new ArrayList<>();
+        int[] który = new int[k];
         for (int i = 0; i < k; i++) {
-            int choose = (int) (Math.random() * army.size());
-            if (!ifContains(which,choose)) {
-                which[i] = choose;
+            int wybór = (int) (Math.random() * army.size());
+            if (!czyJużJest(który,wybór)) {
+                który[i] = wybór;
             } else {
                 i--;
             }
         }
-        for (int i = 0; i < which.length; i++) {
-            generals.add(new General(army.get(which[i])));
+        for (int i = 0; i < który.length; i++) {
+            generałowie.add(new Generał(army.get(który[i])));
         }
-        return generals;
+        return generałowie;
     }
 
-    public static boolean ifContains(int[] which, int choose) {
-        boolean ifContains = false;
-        for (int i = 0; i < which.length; i++) {
-            if (which[i] == choose) {
-                ifContains = true;
+    public static boolean czyJużJest(int[] który, int choose) {
+        boolean czyJużJest = false;
+        for (int i = 0; i < który.length; i++) {
+            if (który[i] == choose) {
+                czyJużJest = true;
             }
         }
-        return ifContains;
+        return czyJużJest;
     }
 
     public static int getterFromScanner(Scanner scanner, String whatIsSearching) {
