@@ -26,7 +26,6 @@ public class Main {
                 irisesMap.put(irises.get(i).name, 1);
             }
         }
-
         return irisesMap;
     }
     public static List<Iris> load (String path) {
