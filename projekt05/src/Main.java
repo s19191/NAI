@@ -9,14 +9,17 @@ public class Main {
     public static void main(String[] args) {
         List<Iris> training = load("iris_training.txt");
         List<Iris> test = load("iris_test.txt");
-        //Map<String, Integer> irisTypes = createTypes(training);
         Map<String, List<Iris>> grouped = group(training);
+        Map<String, Double> mistakesMatrix = createMistakesMatrix();
         double count = 0.0;
         for (int i = 0; i < test.size(); i++) {
-            count += createProbability(test.get(i), grouped);
+            count += createProbability(test.get(i), grouped, mistakesMatrix);
         }
         double precision = count/test.size();
-        System.out.println(precision);
+        System.out.println();
+        System.out.println("Precyzja: " + precision * 100 + "%");
+        System.out.println();
+        soutForMistakesMatrix(mistakesMatrix);
         Scanner scanner = new Scanner(System.in);
         boolean ifContinue = true;
         while (ifContinue) {
@@ -91,12 +94,10 @@ public class Main {
             System.out.println(probability);
         } else {
             System.out.println("*************************************************************Prawdopodobieństwa po wygładzeniu tylko pierwszego atrybutu*************************************************************");
-            int checker = 0;
             for (String type : grouped.keySet()) {
-                if (checker == 0) {
-                    checker++;
-                    List<Double> partProbability = new ArrayList<>();
-                    for (int i = 0; i < iris.numberOfAttributes; i++) {
+                List<Double> partProbability = new ArrayList<>();
+                for (int i = 0; i < iris.numberOfAttributes; i++) {
+                    if (i == 0) {
                         Double counter = 1.0;
                         for (Iris trainingIris : grouped.get(type)) {
                             if (iris.values[i] == trainingIris.values[i]) {
@@ -104,29 +105,21 @@ public class Main {
                             }
                         }
                         partProbability.add(counter / (grouped.get(type).size() + grouped.keySet().size()));
-                    }
-                    Double finalProbability = partProbability.get(0);
-                    for (int i = 1; i < partProbability.size(); i++) {
-                        finalProbability *= partProbability.get(i);
-                    }
-                    probability.put(type, finalProbability);
-                } else {
-                    List<Double> partProbability = new ArrayList<>();
-                    for (int i = 0; i < iris.numberOfAttributes; i++) {
+                    } else {
                         Double counter = 0.0;
                         for (Iris trainingIris : grouped.get(type)) {
                             if (iris.values[i] == trainingIris.values[i]) {
                                 counter++;
                             }
                         }
-                        partProbability.add(counter / grouped.get(type).size());
+                        partProbability.add(counter / (grouped.get(type).size() + grouped.keySet().size()));
                     }
-                    Double finalProbability = partProbability.get(0);
-                    for (int i = 1; i < partProbability.size(); i++) {
-                        finalProbability *= partProbability.get(i);
-                    }
-                    probability.put(type,finalProbability);
                 }
+                Double finalProbability = partProbability.get(0);
+                for (int i = 1; i < partProbability.size(); i++) {
+                    finalProbability *= partProbability.get(i);
+                }
+                probability.put(type, finalProbability);
             }
             System.out.println(probability);
         }
@@ -141,7 +134,7 @@ public class Main {
         return result;
     }
 
-    public static double createProbability(Iris iris, Map<String, List<Iris>> grouped) {
+    public static double createProbability(Iris iris, Map<String, List<Iris>> grouped, Map<String, Double> mistakesMatrix) {
         double result = 0;
         Map<String, Double> probability = new HashMap<>();
         boolean zero = false;
@@ -190,12 +183,10 @@ public class Main {
             System.out.println(probability);
         } else {
             System.out.println("*************************************************************Prawdopodobieństwa po wygładzeniu tylko pierwszego atrybutu*************************************************************");
-            int checker = 0;
             for (String type : grouped.keySet()) {
-                if (checker == 0) {
-                    checker++;
-                    List<Double> partProbability = new ArrayList<>();
-                    for (int i = 0; i < iris.numberOfAttributes; i++) {
+                List<Double> partProbability = new ArrayList<>();
+                for (int i = 0; i < iris.numberOfAttributes; i++) {
+                    if (i == 0) {
                         Double counter = 1.0;
                         for (Iris trainingIris : grouped.get(type)) {
                             if (iris.values[i] == trainingIris.values[i]) {
@@ -203,29 +194,21 @@ public class Main {
                             }
                         }
                         partProbability.add(counter / (grouped.get(type).size() + grouped.keySet().size()));
-                    }
-                    Double finalProbability = partProbability.get(0);
-                    for (int i = 1; i < partProbability.size(); i++) {
-                        finalProbability *= partProbability.get(i);
-                    }
-                    probability.put(type, finalProbability);
-                } else {
-                    List<Double> partProbability = new ArrayList<>();
-                    for (int i = 0; i < iris.numberOfAttributes; i++) {
+                    } else {
                         Double counter = 0.0;
                         for (Iris trainingIris : grouped.get(type)) {
                             if (iris.values[i] == trainingIris.values[i]) {
                                 counter++;
                             }
                         }
-                        partProbability.add(counter / grouped.get(type).size());
+                        partProbability.add(counter / (grouped.get(type).size() + grouped.keySet().size()));
                     }
-                    Double finalProbability = partProbability.get(0);
-                    for (int i = 1; i < partProbability.size(); i++) {
-                        finalProbability *= partProbability.get(i);
-                    }
-                    probability.put(type,finalProbability);
                 }
+                Double finalProbability = partProbability.get(0);
+                for (int i = 1; i < partProbability.size(); i++) {
+                    finalProbability *= partProbability.get(i);
+                }
+                probability.put(type, finalProbability);
             }
             System.out.println(probability);
         }
@@ -239,9 +222,96 @@ public class Main {
         }
         if (iris.name.equals(maxName)) {
             result = 1;
+            putTrue(maxName, mistakesMatrix);
+        } else {
+            putFalse(iris.name, maxName, mistakesMatrix);
         }
         return result;
     }
+
+    public static Map<String, Double> createMistakesMatrix(){
+        Map<String, Double> mistakesMatrix = new LinkedHashMap<>();
+        mistakesMatrix.put("sese",0.0);
+        mistakesMatrix.put("seve",0.0);
+        mistakesMatrix.put("sevi",0.0);
+        mistakesMatrix.put("vese",0.0);
+        mistakesMatrix.put("veve",0.0);
+        mistakesMatrix.put("vevi",0.0);
+        mistakesMatrix.put("vise",0.0);
+        mistakesMatrix.put("vive",0.0);
+        mistakesMatrix.put("vivi",0.0);
+        return mistakesMatrix;
+    }
+
+    public static void putTrue(String name, Map<String,Double> mistakesMatrix) {
+        switch (name) {
+            case "Iris-setosa": {
+                mistakesMatrix.put("sese",mistakesMatrix.get("sese") + 1);
+                break;
+            }
+            case "Iris-versicolor": {
+                mistakesMatrix.put("veve",mistakesMatrix.get("veve") + 1);
+                break;
+            }
+            case "Iris-virginica": {
+                mistakesMatrix.put("vivi",mistakesMatrix.get("vivi") + 1);
+                break;
+            }
+        }
+    }
+
+    public static void putFalse(String trueName, String falseName, Map<String,Double> mistakesMatrix) {
+        String tmp = trueName + falseName;
+        switch (tmp) {
+            case "Iris-setosaIris-versicolor": {
+                mistakesMatrix.put("seve",mistakesMatrix.get("seve") + 1);
+                break;
+            }
+            case "Iris-setosaIris-virginica": {
+                mistakesMatrix.put("sevi",mistakesMatrix.get("sevi") + 1);
+                break;
+            }
+            case "Iris-versicolorIris-setosa": {
+                mistakesMatrix.put("vese",mistakesMatrix.get("vese") + 1);
+                break;
+            }
+            case "Iris-versicolorIris-virginica": {
+                mistakesMatrix.put("vevi",mistakesMatrix.get("vevi") + 1);
+                break;
+            }
+            case "Iris-virginicaIris-setosa": {
+                mistakesMatrix.put("vise",mistakesMatrix.get("vise") + 1);
+                break;
+            }
+            case "Iris-virginicaIris-versicolor": {
+                mistakesMatrix.put("vive",mistakesMatrix.get("vive") + 1);
+                break;
+            }
+        }
+    }
+
+    public static void soutForMistakesMatrix(Map<String, Double> mistakesMatrix){
+        System.out.println("\t\t\tIris-setosa\tIris-versicolor\tIris-virginica");
+        System.out.println("Iris-setosa\t\t" + mistakesMatrix.get("sese") + "\t\t" + mistakesMatrix.get("seve") +"\t\t\t\t" + mistakesMatrix.get("sevi"));
+        System.out.println("Iris-versicolor\t" + mistakesMatrix.get("vese") + "\t\t\t" + mistakesMatrix.get("veve") +"\t\t\t\t" + mistakesMatrix.get("vevi"));
+        System.out.println("Iris-virginica\t" + mistakesMatrix.get("vise") + "\t\t\t" + mistakesMatrix.get("vive") +"\t\t\t\t" + mistakesMatrix.get("vivi"));
+        System.out.println();
+        System.out.println("\tIris-setosa\tIris-versicolor\tIris-virginica");
+        Double seP = mistakesMatrix.get("sese") / (mistakesMatrix.get("sese") + mistakesMatrix.get("vese") + mistakesMatrix.get("vise"));
+        Double veP = mistakesMatrix.get("veve") / (mistakesMatrix.get("veve") + mistakesMatrix.get("seve") + mistakesMatrix.get("vive"));
+        Double viP = mistakesMatrix.get("vivi") / (mistakesMatrix.get("vivi") + mistakesMatrix.get("sevi") + mistakesMatrix.get("vevi"));
+        Double seR = mistakesMatrix.get("sese") / (mistakesMatrix.get("sese") + mistakesMatrix.get("seve") + mistakesMatrix.get("sevi"));
+        Double veR = mistakesMatrix.get("veve") / (mistakesMatrix.get("veve") + mistakesMatrix.get("vese") + mistakesMatrix.get("vevi"));
+        Double viR = mistakesMatrix.get("vivi") / (mistakesMatrix.get("vivi") + mistakesMatrix.get("vise") + mistakesMatrix.get("vive"));
+        Double seF = (2 * seP * seR) / (seP + seR);
+        Double veF = (2 * veP * veR) / (veP + veR);
+        Double viF = (2 * viP * viR) / (viP + viR);
+        System.out.println("P\t\t" + seP + "\t\t\t" + veP +"\t\t\t\t" + viP);
+        System.out.println("R\t\t" + seR + "\t\t\t" + veR +"\t\t\t\t" + viR);
+        System.out.println("F\t\t" + seF + "\t\t\t" + veF +"\t\t\t\t" + viF);
+        System.out.println();
+    }
+
     public static Map<String, List<Iris>> group(List<Iris> irises) {
         Map<String, List<Iris>> sorted = new HashMap<>();
         for (Iris iris : irises) {
@@ -254,20 +324,6 @@ public class Main {
         }
         return sorted;
     }
-
-//    public static Map<String, Integer> createTypes(List<Iris> irises) {
-//        Map<String, Integer> irisesMap = new HashMap<>();
-//        for (int i = 0; i < irises.size(); i++) {
-//            if (irisesMap.containsKey(irises.get(i).name)) {
-//                Integer tmp = irisesMap.get(irises.get(i).name);
-//                irisesMap.remove(irises.get(i).name);
-//                irisesMap.put(irises.get(i).name, ++tmp);
-//            } else {
-//                irisesMap.put(irises.get(i).name, 1);
-//            }
-//        }
-//        return irisesMap;
-//    }
 
     public static List<Iris> load (String path) {
         List<String> lines = new ArrayList<>();
